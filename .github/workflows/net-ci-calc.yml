@@ -1,0 +1,14 @@
+name: CI usando workflow reutilizable
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  ci:
+    uses: jhoannpv-enterprise/jpv-reusable-workflows/.github/workflows/net-ci.yml@main
+    with:
+      project-path: calculadora.csproj
+      run-app: "false"
